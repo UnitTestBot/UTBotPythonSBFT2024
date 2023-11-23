@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "python-tool-competition-2024-utbot_python"
+version = "0.1.0"
+description = "Python Tool Competition 2024 implementation using UTBotPython"
+authors = ["Vyacheslav Tamarin, Ekaterina Tochilina"]
+license = "Apache 2.0"
+readme = "README.md"
+packages = [{include = "python_tool_competition_2024_utbot_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-tool-competition-2024 = "^0.2.0"
+utbot-executor = "1.9.2"
+utbot-mypy-runner = "0.2.15"
+utbot_dist = [
+    { url = "https://github.com/UnitTestBot/UTBotPythonSBFT2024/releases/download/v1/utbot_dist-0.1.0-py3-none-manylinux_2_31_x86_64.whl", platform = "linux" }
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."python_tool_competition_2024.test_generators"]
+utbot-python = "python_tool_competition_2024_utbot_python.generator:UTBotPythonTestGenerator"
+
+[tool.poetry.scripts]
+check = "python_tool_competition_2024_utbot_python.check_usvm:main"
