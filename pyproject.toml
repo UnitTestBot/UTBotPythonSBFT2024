@@ -24,4 +24,4 @@ build-backend = "poetry.core.masonry.api"
 utbot-python = "python_tool_competition_2024_utbot_python.generator:UTBotPythonTestGenerator"
 
 [tool.poetry.scripts]
-check = "python_tool_competition_2024_utbot_python.check_usvm:main"
+check = "python_tool_competition_2024_utbot_python.check_usvm:check_usvm"

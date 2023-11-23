@@ -19,7 +19,7 @@ For more information see
 * Run `poetry install`
 
 ### Check the installation success
-* Run `poetry check`, this command runs simple test generation and shows error messages
+* Run `poetry run check`, this command runs simple test generation and shows error messages
 * Successful logger messages should end with the following lines:
 ```
 Exit status: 0

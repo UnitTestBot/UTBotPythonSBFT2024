@@ -1222,6 +1222,20 @@ files = [
 ]
 
 [[package]]
+name = "utbot-dist"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = ">=3.11,<4.0"
+files = [
+    {file = "utbot_dist-0.1.0-py3-none-manylinux_2_31_x86_64.whl", hash = "sha256:0f5295e41f10276331568aa1a849271fcaf7e1cb783e49218025b5bc0fb24614"},
+]
+
+[package.source]
+type = "url"
+url = "https://github.com/UnitTestBot/UTBotPythonSBFT2024/releases/download/v1/utbot_dist-0.1.0-py3-none-manylinux_2_31_x86_64.whl"
+
+[[package]]
 name = "utbot-executor"
 version = "1.9.2"
 description = ""
@@ -1376,4 +1390,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "ac8ffae40ec052aff102685d2dd3a0ded0545069a243d4d7a61d28605d199835"
+content-hash = "7f60663e2462a12dd628d7db599e9388b6d0ca1d9433044bca8c511a11ed17ef"
