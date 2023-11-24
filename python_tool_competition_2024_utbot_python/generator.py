@@ -1,6 +1,5 @@
 """A test generator using UTBotPython."""
 import pathlib
-import site
 import subprocess
 import sys
 import tempfile
