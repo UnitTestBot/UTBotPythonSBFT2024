@@ -17,7 +17,7 @@ For more information see
 * Install [poetry](https://python-poetry.org/)
 * Run `poetry install`
 
-### Check the installation success
+### Check the installation
 * Run `poetry run check`.
 * Successful logger messages should end with the following lines:
 ```
