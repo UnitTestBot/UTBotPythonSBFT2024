@@ -36,7 +36,7 @@ If you get a message `Exit status: ... (Failure)`, `usvm-python` could not be ru
 
 Configuration is set in `python_tool_competition_2024_utbot_python/config.py`.
 
-You can specify time budget with option `timeout`. Now it is set to 300 seconds. The tool will probably spend all given time.
+You can specify the time budget with the option `TIMEOUT`. Now it is set to 300 seconds. The tool will probably spend all given time.
 
 ## Development
 
