@@ -79,6 +79,7 @@ def _build_test(
             UTBotPythonConfig.PYTHON_PATH,
             UTBotPythonConfig.JAVA_PATH,
             check_usvm=check_usvm,
+            include_mypy_in_timeout=UTBotPythonConfig.INCLUDE_MYPY_RUN_IN_TIMEOUT
         )
 
         utbot_tests = _read_generated_tests(str(output_file))
@@ -98,6 +99,7 @@ def _run_utbot(
     python_path: str,
     java_cmd: str,
     check_usvm: bool = False,
+    include_mypy_in_timeout: bool = False
 ):
     command = (
         f"{java_cmd} -jar {jar_path}"
@@ -113,6 +115,9 @@ def _run_utbot(
     )
     if check_usvm:
         command += " --check-usvm"
+
+    if include_mypy_in_timeout:
+        command += " --include-mypy-analysis-time"
 
     print(command)
     start = time.time()

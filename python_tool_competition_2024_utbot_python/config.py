@@ -9,4 +9,5 @@ class UTBotPythonConfig:
     JAR_FILE = SITE_DIR / "utbot_dist" / "utbot-cli-python-2023.11-SNAPSHOT.jar"
     USVM_PATH = SITE_DIR / "utbot_dist" / "usvm-python"
     PYTHON_PATH = sys.executable
-    TIMEOUT = 90_000
+    INCLUDE_MYPY_RUN_IN_TIMEOUT = True
+    TIMEOUT = 300_000
