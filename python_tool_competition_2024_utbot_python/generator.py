@@ -112,6 +112,7 @@ def _run_utbot(
         f" --usvm-dir {usvm_dir}"
         f" --runtime-exception-behaviour PASS"
         f" --prohibited-exceptions -"
+        f" --do-not-generate-state-assertions"
     )
     if check_usvm:
         command += " --check-usvm"
