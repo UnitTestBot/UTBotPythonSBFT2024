@@ -8,7 +8,6 @@ For more information see
 ## Requirements
 
 * Python 3.11, implementation: CPython
-* poetry
 * OS: Linux
 * Java 17, accessible in command line under name `java`
 * glibc>=2.31
@@ -19,19 +18,30 @@ For more information see
 * Run `poetry install`
 
 ### Check the installation success
-* Run `poetry run check`, this command runs simple test generation and shows error messages
+* Run `poetry run check`.
 * Successful logger messages should end with the following lines:
 ```
-Exit status: 0
+VenvConfig: VenvConfig(basePath=..., libPath=..., binPath=...)
+Exit status: 0 (Success)
 ............ | INFO  | GlobalPythonEngine | Symbolic: stop receiver
 ............ | INFO  | PythonTestCaseGenerator | Collect all test executions for some_method
 ............ | INFO  | SbftGenerateTestsCommand | Saving tests...
 ```
 
+If you get a message `No VenvConfig`, virtual environment in our interpreter was not activated for some reason.
+
+If you get a message `Exit status: ... (Failure)`, `usvm-python` could not be run for some reason.
+
+## Configuration
+
+Configuration is set in `python_tool_competition_2024_utbot_python/config.py`.
+
+You can specify time budget with option `timeout`. Now it is set to 300 seconds. The tool will probably spend all given time.
+
 ## Development
 
 The entry point called by `python-tool-competition-2024` is the `build_test`
-method in `utbot_python_sbft_2024/generator.py`.
+method in `python_tool_competition_2024_utbot_python/generator.py`.
 
 ## Calculating Metrics
 
