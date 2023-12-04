@@ -63,7 +63,7 @@ def _build_test(
         sys.stderr.write("ERROR: This script works only on Linux\n")
         exit(1)
 
-    sys_paths = [target_file_info.config.targets_dir.parent]
+    sys_paths = [target_file_info.config.targets_dir]
 
     with tempfile.TemporaryDirectory() as tempdir:
         output_dir = pathlib.Path(tempdir)
