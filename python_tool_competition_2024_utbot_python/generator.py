@@ -63,7 +63,7 @@ def _build_test(
         sys.stderr.write("ERROR: This script works only on Linux\n")
         exit(1)
 
-    sys_paths = [target_file_info.config.targets_dir]
+    sys_paths = [target_file_info.config.targets_dir.parent]
 
     with tempfile.TemporaryDirectory() as tempdir:
         output_dir = pathlib.Path(tempdir)
@@ -79,7 +79,7 @@ def _build_test(
             UTBotPythonConfig.PYTHON_PATH,
             UTBotPythonConfig.JAVA_PATH,
             check_usvm=check_usvm,
-            include_mypy_in_timeout=UTBotPythonConfig.INCLUDE_MYPY_RUN_IN_TIMEOUT
+            include_mypy_in_timeout=UTBotPythonConfig.INCLUDE_MYPY_RUN_IN_TIMEOUT,
         )
 
         utbot_tests = _read_generated_tests(str(output_file))
@@ -99,7 +99,7 @@ def _run_utbot(
     python_path: str,
     java_cmd: str,
     check_usvm: bool = False,
-    include_mypy_in_timeout: bool = False
+    include_mypy_in_timeout: bool = False,
 ):
     command = (
         f"{java_cmd} -jar {jar_path}"
