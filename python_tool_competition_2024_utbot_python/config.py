@@ -10,4 +10,4 @@ class UTBotPythonConfig:
     USVM_PATH = SITE_DIR / "utbot_dist" / "usvm-python"
     PYTHON_PATH = sys.executable
     INCLUDE_MYPY_RUN_IN_TIMEOUT = True
-    TIMEOUT = 300_000
+    TIMEOUT = 380_000
