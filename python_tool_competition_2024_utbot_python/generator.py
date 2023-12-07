@@ -84,8 +84,8 @@ def _build_test(
 
         utbot_tests = _read_generated_tests(str(output_file))
         if utbot_tests == "":
-            utbot_tests = f"""def test_dummy():
-                                  import {module_name}"""
+            utbot_tests = (f"def test_dummy():\n"
+                           f"    import {target_file_info.module_name}")
 
         return TestGenerationSuccess(utbot_tests)
 
