@@ -1,3 +1,5 @@
 __pycache__/
-/results/
 .dmypy.json
+results*
+stashed*
+.coverage

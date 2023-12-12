@@ -15,7 +15,7 @@ from python_tool_competition_2024.generation_results import (
 )
 from python_tool_competition_2024.generators import FileInfo, TestGenerator
 
-from python_tool_competition_2024_utbot_python.config import UTBotPythonConfig
+from python_tool_competition_2024_utbot_python.config import UTBotPythonConfig, Mode
 
 GENERATION_TIMES: list[float] = []
 
@@ -78,14 +78,14 @@ def _build_test(
             UTBotPythonConfig.TIMEOUT,
             UTBotPythonConfig.PYTHON_PATH,
             UTBotPythonConfig.JAVA_PATH,
+            UTBotPythonConfig.MODE,
             check_usvm=check_usvm,
             include_mypy_in_timeout=UTBotPythonConfig.INCLUDE_MYPY_RUN_IN_TIMEOUT,
         )
 
         utbot_tests = _read_generated_tests(str(output_file))
         if utbot_tests == "":
-            utbot_tests = (f"def test_dummy():\n"
-                           f"    import {target_file_info.module_name}")
+            return TestGenerationFailure(("Nothing generated.",), FailureReason.NOTHING_GENERATED)
 
         return TestGenerationSuccess(utbot_tests)
 
@@ -99,6 +99,7 @@ def _run_utbot(
     timeout: int,
     python_path: str,
     java_cmd: str,
+    mode: Mode,
     check_usvm: bool = False,
     include_mypy_in_timeout: bool = False,
 ):
@@ -114,6 +115,7 @@ def _run_utbot(
         f" --runtime-exception-behaviour PASS"
         f" --prohibited-exceptions -"
         f" --do-not-generate-state-assertions"
+        f" --mode {mode.value}"
     )
     if check_usvm:
         command += " --check-usvm"
