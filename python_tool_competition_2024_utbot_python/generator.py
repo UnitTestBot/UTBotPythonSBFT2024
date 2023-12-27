@@ -113,9 +113,10 @@ def _run_utbot(
         f" --java-cmd {java_cmd}"
         f" --usvm-dir {usvm_dir}"
         f" --runtime-exception-behaviour PASS"
-        f" --prohibited-exceptions -"
+        f" --prohibited-exceptions builtins.TypeError,builtins.AttributeError"
         f" --do-not-generate-state-assertions"
         f" --mode {mode.value}"
+        f" --only-toplevel"
     )
     if check_usvm:
         command += " --check-usvm"
