@@ -1,3 +1,6 @@
-[submodule "targets/python-benchmarks"]
-	path = targets/python-benchmarks
-	url = https://github.com/tochilinak/python-benchmarks.git
+[submodule "python_benchmarks"]
+	path = targets/python_benchmarks
+	url = https://github.com/tochilinak/python_benchmarks.git
+[submodule "targets/python_benchmarks"]
+	path = targets/python_benchmarks
+	url = https://github.com/tochilinak/python_benchmarks.git
