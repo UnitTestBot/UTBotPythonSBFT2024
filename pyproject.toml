@@ -9,11 +9,13 @@ packages = [{include = "python_tool_competition_2024_utbot_python"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-python-tool-competition-2024 = "^0.2.0"
+python-tool-competition-2024 = [
+    { url = "https://github.com/tochilinak/python-tool-competition-2024/releases/download/v0/python_tool_competition_2024-0.2.0-py3-none-any.whl" }
+]
 utbot-executor = "1.9.16"
 utbot-mypy-runner = "0.2.16"
 utbot_dist = [
-    { url = "https://github.com/UnitTestBot/UTBotPythonSBFT2024/releases/download/v20/utbot_dist-0.1.0-py3-none-manylinux_2_31_x86_64.whl", platform = "linux" }
+    { url = "https://github.com/UnitTestBot/UTBotPythonSBFT2024/releases/download/v22/utbot_dist-0.1.0-py3-none-manylinux_2_31_x86_64.whl", platform = "linux" }
 ]
 
 [build-system]

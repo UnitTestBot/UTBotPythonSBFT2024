@@ -81,6 +81,8 @@ def _build_test(
             UTBotPythonConfig.MODE,
             check_usvm=check_usvm,
             include_mypy_in_timeout=UTBotPythonConfig.INCLUDE_MYPY_RUN_IN_TIMEOUT,
+            only_toplevel=UTBotPythonConfig.ONLY_TOPLEVEL,
+            path_selector=UTBotPythonConfig.PATH_SELECTOR
         )
 
         utbot_tests = _read_generated_tests(str(output_file))
@@ -100,6 +102,8 @@ def _run_utbot(
     python_path: str,
     java_cmd: str,
     mode: Mode,
+    only_toplevel: bool,
+    path_selector: str,
     check_usvm: bool = False,
     include_mypy_in_timeout: bool = False,
 ):
@@ -113,11 +117,14 @@ def _run_utbot(
         f" --java-cmd {java_cmd}"
         f" --usvm-dir {usvm_dir}"
         f" --runtime-exception-behaviour PASS"
-        f" --prohibited-exceptions builtins.TypeError,builtins.AttributeError"
+        f" --prohibited-exceptions -"
         f" --do-not-generate-state-assertions"
         f" --mode {mode.value}"
-        f" --only-toplevel"
+        f" --path-selector {path_selector}"
     )
+    if only_toplevel:
+        command += " --only-toplevel"
+
     if check_usvm:
         command += " --check-usvm"
 
